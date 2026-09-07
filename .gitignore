@@ -1,0 +1,42 @@
+# React
+Frontend/node_modules/
+Frontend/dist/
+
+# Environment / secrets
+.env
+.env.*
+Frontend/.env
+Frontend/.env.*
+Backend/.env
+Backend/.env.*
+
+# .NET build output
+Backend/bin/
+Backend/obj/
+
+# .NET publish output
+Backend/inetpub/
+
+# Uploaded files / employee documents
+Backend/wwwroot/uploads/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Development settings
+Backend/appsettings.Development.json
+
+Backend/inetpub/
+Backend/bin/
+Backend/obj/
+Backend/wwwroot/uploads/
+Backend/appsettings.Development.json

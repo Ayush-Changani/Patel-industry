@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Barlow:wght@300;400;500;600;700;900&family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+/* --- BASE STYLES --- */
+:root {
+  --primary-bg: #DFD0B8;
+  --primary-text: #222831;
+  --accent-user: #948979;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, .font-barlow {
+  font-family: 'Barlow', sans-serif;
+}
+
+/* --- PAGE SCALING UTILITY --- */
+.user-page-scale {
+  zoom: 0.83; /* Slightly more than 0.8 for better balance */
+  transform-origin: top left;
+}
+
+/* --- CUSTOM TRANSITION UTILITIES --- */
+.transition-card {
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* --- SCROLLBAR CUSTOMIZATION --- */
+/* Transparent Horizontal Scrollbar for Grid */
+.custom-scrollbar-transparent::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+.custom-scrollbar-transparent::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar-transparent::-webkit-scrollbar-thumb {
+  background: rgba(57, 62, 70, 0.1);
+  border-radius: 10px;
+}
+
+.custom-scrollbar-transparent:hover::-webkit-scrollbar-thumb {
+  background: rgba(57, 62, 70, 0.4);
+}
+
+/* Sidebar Transparent Scrollbar */
+.custom-scrollbar-sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.custom-scrollbar-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar-sidebar::-webkit-scrollbar-thumb {
+  background: rgba(223, 208, 184, 0.1); 
+  border-radius: 10px;
+}
+
+.custom-scrollbar-sidebar:hover::-webkit-scrollbar-thumb {
+  background: rgba(223, 208, 184, 0.3);
+}
+
+/* --- ANIMATIONS --- */
+/* --- ANIMATIONS --- */
+@keyframes siteLoadZoom {
+  0% { transform: scale(0.95); opacity: 0; filter: blur(10px); }
+  100% { transform: scale(1); opacity: 1; filter: blur(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(148, 137, 121, 0.7); }
+  50% { box-shadow: 0 0 0 10px rgba(148, 137, 121, 0); }
+}
+
+@keyframes scroll-dot {
+  0% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(15px); opacity: 1; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+/* Animation Classes */
+.animate-fadeInUp { animation: fadeInUp 0.8s ease-out forwards; }
+.animate-slideIn { animation: slideIn 0.8s ease-out forwards; }
+.animate-slideInRight { animation: slideInRight 0.8s ease-out forwards; }
+.animate-float { animation: float 3s ease-in-out infinite; }
+.animate-countUp { animation: countUp 0.6s ease-out forwards; }
+.animate-pulse-glow { animation: pulse-glow 2s infinite; }
+.animate-scroll-dot { animation: scroll-dot 2s ease-in-out infinite; }
+.animate-shimmer {
+  background: linear-gradient(to right, transparent 0%, rgba(223, 208, 184, 0.05) 50%, transparent 100%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite linear;
+}
+
+.site-zoom-container {
+  animation: siteLoadZoom 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* --- SHARED UTILITIES --- */
+.line-accent {
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-user) 0%, transparent 100%);
+  width: 60px;
+}
+
+.glass-effect {
+  background: rgba(57, 62, 70, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(223, 208, 184, 0.1);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #DFD0B8 0%, #948979 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.industrial-line {
+  position: relative;
+  overflow: hidden;
+}
+
+.industrial-line::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #948979, #DFD0B8);
+  transition: width 0.3s ease;
+}
+
+.industrial-line:hover::after {
+  width: 100%;
+}

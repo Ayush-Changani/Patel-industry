@@ -1,0 +1,159 @@
+/* --- EXISTING BASE STYLES ---*/ 
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* --- 404 MODULE STYLES (TRANSPARENT BG) ---  */
+
+.not-found-wrapper {
+  --accent-dark: #222831;
+  --accent-muted: #393E46;
+  --bg-card: #DFD0B8;
+  --text-muted: #888;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  background: transparent; /* Transparent as requested  */
+  padding: 40px 20px;
+}
+
+.erp-header-tag {
+  background-color: var(--accent-dark);
+  color: var(--bg-card);
+  padding: 8px 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  border-radius: 50px;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.error-num-large {
+  font-size: clamp(5rem, 15vw, 8rem);
+  font-weight: 800;
+  color: var(--accent-dark);
+  line-height: 1;
+  margin: 0;
+}
+
+.error-title-sub {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  color: var(--accent-dark);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.error-msg {
+  max-width: 550px;
+  margin: 1.5rem auto;
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.button-group {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.btn-base {
+  padding: 12px 24px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary {
+  background-color: var(--accent-dark);
+  color: var(--bg-card);
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #000;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--accent-dark);
+  border: 1px solid rgba(34, 40, 49, 0.4);
+}
+
+.btn-outline:hover {
+  background: rgba(34, 40, 49, 0.05);
+  transform: translateY(-2px);
+}
+
+.footer-meta {
+  margin-top: 4rem;
+  font-size: 0.7rem;
+  color: var(--accent-muted);
+  letter-spacing: 1.5px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 1.5rem;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .button-group {
+    flex-direction: column;
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  .error-num-large {
+    font-size: 5rem;
+  }
+
+  .footer-meta {
+    flex-direction: column;
+    gap: 10px;
+  }
+}  

@@ -1,0 +1,128 @@
+.ui-header {
+  --header-bg: rgba(34, 40, 49, 0.85);
+  --header-height: 80px;
+  --header-text-primary: #DFD0B8;
+  --header-accent: #948979;
+  --header-accent-hover: #DFD0B8;
+  --header-blur: 20px;
+  
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  background: var(--header-bg);
+  backdrop-filter: blur(var(--header-blur));
+  -webkit-backdrop-filter: blur(var(--header-blur));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  z-index: 1000;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(148, 137, 121, 0.2);
+}
+
+.ui-header .logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--header-text-primary);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ui-header .logo-icon {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, var(--header-accent), #393E46);
+  border-radius: 8px;
+  border: 1px solid rgba(223, 208, 184, 0.2);
+}
+
+.ui-header nav {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.ui-header .nav-link {
+  text-decoration: none;
+  color: var(--header-text-primary);
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: all 0.2s ease;
+  position: relative;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.ui-header .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--header-accent);
+  transition: width 0.3s ease;
+}
+
+.ui-header .nav-link:hover {
+  color: var(--header-accent);
+  transform: translateY(-1px);
+}
+
+.ui-header .nav-link:hover::after {
+  width: 100%;
+}
+
+.ui-header .nav-link.active {
+  color: var(--header-accent);
+}
+
+.ui-header .nav-link.active::after {
+  width: 100%;
+}
+
+.ui-header .auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.ui-header .login-btn {
+  background: var(--header-accent);
+  color: #222831;
+  padding: 10px 24px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.ui-header .login-btn:hover {
+  background: var(--header-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 768px) {
+  .ui-header nav {
+    display: none;
+  }
+  
+  .ui-header {
+    padding: 0 20px;
+    height: 70px;
+  }
+
+  .ui-header .logo {
+    font-size: 1.3rem;
+  }
+}
