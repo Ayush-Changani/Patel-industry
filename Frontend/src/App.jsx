@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Company_master from "./layouts/Config/Master Page/Company_master";
-import Country_Master from "./layouts/Config/Master Page/Country_master";
+import Country_Master from "./layouts/Config/Master Page/Country_Master";
 import State_Master from "./layouts/Config/Master Page/State_master";
 import District_Master from "./layouts/Config/Master Page/District_Master";
 import Taluka_Master from "./layouts/Config/Master Page/Taluka_Master";
