@@ -1,0 +1,22 @@
+# Build Stage (8.0 use karo)
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+
+# Copy project file
+COPY Backend.csproj .
+RUN dotnet restore
+
+# Copy all files
+COPY . .
+RUN dotnet publish -c Release -o /app/publish
+
+# Runtime Stage (8.0 use karo)
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
+WORKDIR /app
+COPY --from=build /app/publish .
+
+# Vercel PORT environment variable
+ENV ASPNETCORE_URLS=http://+:${PORT:-8080}
+EXPOSE ${PORT:-8080}
+
+ENTRYPOINT ["dotnet", "Backend.dll"]
