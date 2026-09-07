@@ -6,6 +6,13 @@ using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 
 // =======================
+// Vercel PORT Configuration (IMPORTANT!)
+// =======================
+Console.WriteLine("=== API STARTING ===");
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
+
+// =======================
 // Services
 // =======================
 builder.Services.AddControllers();
@@ -41,15 +48,14 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 });
 
 // =======================
-// CORS
+// CORS (Vercel + Local)
 // =======================
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowReactApp", policy =>
+    options.AddPolicy("AllowAll", policy =>
     {
-        policy.WithOrigins("http://localhost:5173")  // Local
-        //policy.WithOrigins("http://patel_industries") //Live
-             .AllowAnyHeader()
+        policy.AllowAnyOrigin()      // Vercel mate
+              .AllowAnyHeader()
               .AllowAnyMethod();
     });
 });
@@ -57,18 +63,19 @@ builder.Services.AddCors(options =>
 var app = builder.Build();
 
 // =======================
-// Enable Swagger (Works in IIS)
+// Enable Swagger
 // =======================
 app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
-    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Patel Industries ");
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Patel Industries");
     c.RoutePrefix = "swagger";
 });
 
-app.UseHttpsRedirection();
+// Vercel ma HTTPS redirection off (Vercel handles SSL)
+// app.UseHttpsRedirection();  // Comment out for Vercel
 
-app.UseCors("AllowReactApp");
+app.UseCors("AllowAll");
 
 app.UseAuthentication();
 app.UseAuthorization();
