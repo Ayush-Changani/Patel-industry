@@ -24,7 +24,7 @@ import User_Group_list from "./layouts/Config/List Page/User_Group_list";
 import GST_Slab_list from "./layouts/Config/List Page/GST_Slab_list";
 import Unit_of_Measure_list from "./layouts/Config/List Page/Unit_of_Measure_list";
 import Item_Category_list from "./layouts/Cateloge/Listpage/Item_Category_list";
-import Item_Master_List from "./layouts/Cateloge/Listpage/Item_master_list";
+import Item_Master_List from "./layouts/Cateloge/Listpage/Item_Master_List";
 import User_list from "./layouts/Config/List Page/User_list";
 import Item_Type_list from "./layouts/Cateloge/Listpage/Item_Type_list";
 import HSN_Code_List from "./layouts/Config/List Page/HSN_Code_List";
@@ -42,7 +42,7 @@ import User_wise_menu_rides from "./layouts/Config/Master Page/User_wise_menu_ri
 import Purchase_Requisition_form from "./layouts/Purchase/Form Page/Purchase_Requisition_form";
 import Purchase_Requisition_list from "./layouts/Purchase/List Page/Purchase_Requisition_list";
 import Department_Master from "./layouts/HR/Form Page/Department_Master";
-import Department_list from "./layouts/HR/List page/Department_list"; 
+import Department_list from "./layouts/HR/List Page/Department_list";
 import Entity_Master from "./layouts/Entity/Master Page/Entity_Master";
 import Entity_list from "./layouts/Entity/List Page/Entity_list";
 import Dashboard from "./layouts/Dashboard/Dashboard"; 
@@ -70,7 +70,7 @@ import Purchase_Order_list from "./layouts/Purchase/List Page/Purchase_Order_lis
 import GRN_list from "./layouts/Purchase/List Page/GRN_list";
 import GRN_form from "./layouts/Purchase/Form Page/GRN_form";
 import Leave_Master from "./layouts/HR/Form Page/Leave_Master";
-import Leave_Request_List from "./layouts/HR/List Page/Leave_Request_List ";
+import Leave_Request_List from "./layouts/HR/List Page/Leave_Request_List";
 import Attendance_Form from "./layouts/HR/Form Page/Attendance_Form";
 import Attendance_List from "./layouts/HR/List Page/Attendance_List";
 import Purchase_Invoice_form from "./layouts/Purchase/Form Page/Purchase_Invoice_form";
