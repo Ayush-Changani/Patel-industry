@@ -2,14 +2,10 @@
   "builds": [
     {
       "src": "Dockerfile.vercel",
-      "use": "@vercel/docker"
+      "use": "docker"
     }
   ],
   "routes": [
-    {
-      "src": "/swagger",
-      "dest": "/"
-    },
     {
       "src": "/(.*)",
       "dest": "/"
